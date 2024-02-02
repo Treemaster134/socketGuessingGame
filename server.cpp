@@ -31,13 +31,9 @@ int main() {
         return 0;
     }
     
-    char address[15];
-    printf("Enter ip address: ");
-    std::cin.getline(address, 15);
-    
     sockaddr_in service;
     service.sin_family = AF_INET;
-    service.sin_addr.s_addr = inet_addr(address);  // Replace with your desired IP address
+    service.sin_addr.s_addr = inet_addr("127.0.0.1");  // Replace with your desired IP address
     service.sin_port = htons(55555);  // Choose a port number
 
     // Use the bind function

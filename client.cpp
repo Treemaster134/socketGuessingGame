@@ -28,13 +28,9 @@ int main() {
     }
 
     // Connect to the server
-    char address[15];
-    printf("Enter ip address: ");
-    std::cin.getline(address, 15);
-    
     sockaddr_in clientService;
     clientService.sin_family = AF_INET;
-    clientService.sin_addr.s_addr = inet_addr(address);  // Replace with the server's IP address
+    clientService.sin_addr.s_addr = inet_addr("127.0.0.1");  // Replace with the server's IP address
     clientService.sin_port = htons(55555);  // Use the same port as the server
 
     // Use the connect function
